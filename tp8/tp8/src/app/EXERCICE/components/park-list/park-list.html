@@ -1,0 +1,12 @@
+<h1>Liste des parcs d'attraction</h1>
+<div>
+  @for (park of parks(); track park.id) {
+    <div>
+      <img [src]="park.photo" /> Id: {{ park.id }} <strong>{{ park.name }}</strong>
+      {{ park.nbLikes }}
+      <button [routerLink]="['/parks', park.id]">Infos</button>
+      <button type="button" (click)="likePark(park)">Likes</button>
+      <button type="button" (click)="deletePark(park.id)">Supprimer</button>
+    </div>
+  }
+</div>
